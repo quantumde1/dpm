@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/dpm
+dpm.so
+dpm.dylib
+dpm.dll
+dpm.a
+dpm.lib
+dpm-test-*
+*.exe
+*.o
+*.obj
+*.lst

@@ -1,0 +1,11 @@
+{
+	"authors": [
+		"quantumde1"
+	],
+	"copyright": "Copyright © 2023, quantumde1",
+	"dependencies": {
+	},
+	"description": "Package manager on D",
+	"license": "GNU GPLv3",
+	"name": "dpm"
+}
