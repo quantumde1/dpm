@@ -20,13 +20,12 @@ void main(string[] args) {
 		rm_pkg(args[2]);
 	}
 	if (args[1] == "cc") {
-		mkdir("/var/cache/dpm/packages/");
+		mkdirRecurse("/var/cache/dpm/packages/"~args[2]);
 	}
 	if (args[1] == "rc") {
-		rmdir("/var/cache/dpm/packages");
+		rmdirRecurse("/var/cache/dpm/packages/");
 	}
 	if (args[1] == "in") {
-		mkdir("/var/cache/dpm/packages/"~args[2]);
 		writeln("Downloading ", args[2]);
 		download_file(args[2]);
 		unpack(args[2]);
