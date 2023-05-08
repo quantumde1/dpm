@@ -4,6 +4,7 @@ import std.file;
 import get;
 import install;
 import remove;
+import list;
 
 void help() {
 	writeln("Create cache dir: dpm cc");
@@ -33,5 +34,8 @@ void main(string[] args) {
 	}
 	if (args[1] == "help") {
 		help;
+	}
+	if (args[1] == "show") {
+		show_packages;
 	}
 }
