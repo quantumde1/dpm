@@ -7,7 +7,7 @@ import std.range;
 import std.process;
 
 void rm_pkg(string packagename) {
-    auto ps = execute(["/usr/bin/dpm_search", packagename]);
+    auto ps = execute(["/usr/bin/dpm_search", "/usr/bin/"~packagename]);
     writeln(ps.output);
     if (ps.output == "found\n") {
         writeln("Installed, so will be removed");
