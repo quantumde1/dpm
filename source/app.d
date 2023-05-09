@@ -18,7 +18,7 @@ void main(string[] args) {
 		writeln("Not enough arguments");
 	}
 	if (args[1] == "rm") {
-		rm_pkg(args[2]);
+		rm_pkg(args[2], args[3]);
 	}
 	if (args[1] == "cc") {
 		mkdirRecurse("/var/cache/dpm/packages/"~args[2]);

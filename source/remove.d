@@ -6,7 +6,7 @@ import std.string;
 import std.range;
 import std.process;
 
-void rm_pkg(string packagename) {
+void rm_pkg(string packagename, string flag) {
     auto ps = execute(["/usr/bin/dpm_search", "/usr/bin/"~packagename]);
     writeln(ps);
     writeln(ps.output);
@@ -15,7 +15,13 @@ void rm_pkg(string packagename) {
         auto path = "/usr/bin/"~packagename;
         path.remove;
         std.file.rename("/var/lib/dpm/tmp.txt", "/var/lib/dpm/installedpkg.txt");
-        rmdirRecurse("/etc/"~packagename);
+        if (flag == "-d") {
+            rmdirRecurse("/etc/"~packagename);
+            writeln("Succeccfully removed within directory");
+        }
+        if (flag == "-nd") {
+            writeln("Successfully removed without directory");
+        }
     }
     else {
         writeln("Not installed, so will be not removed");
